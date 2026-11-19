@@ -11,7 +11,8 @@ data = json.load(pokedex)
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 
-#Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
+# Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. 
+# Make the user aware if no pokemon was found. 
 
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
@@ -35,6 +36,6 @@ def pokedex():
             type1 = input("Type the frist type you want pokemon for.")
             type2 = input("Type the second type you want pokemon for.")
             for find in data:
-                if find["type"] == find["type"][type1]:
+                if find["type"] == find["type"][type1] and find["type"] == find["type"][type2]:
                     print(find["name"])
 pokedex()
