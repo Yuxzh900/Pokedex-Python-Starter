@@ -17,15 +17,12 @@ data = json.load(pokedex)
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
 
+
 def pokedex():
     pokemonfindtype = []
     lang = "english"
     while True:
-        print("1: Rechoose language" \
-        "2: print all pokemon names" \
-        "3: Search based on type" \
-        "4: Search based on name" \
-        "5: Move finder")
+        print("1: Rechoose language" "2: print all pokemon names" "3: Search based on type" "4: Search based on name" "5: Move finder")
         action = int(input("Type the number of the action you want to do."))
         if action == 1:
             lang = input("Choose the language you want to use. The options are English, Japanese, Chinese, French.").lower()
@@ -35,7 +32,8 @@ def pokedex():
         if action == 3: 
             type1 = input("Type the frist type you want pokemon for.")
             type2 = input("Type the second type you want pokemon for.")
-            for find in data:
-                if find["type"] == find["type"][type1] and find["type"] == find["type"][type2]:
-                    print(find["name"])
+            for pokemon in data:
+                 if type1 in pokemon["type"] and type2 in pokemon["type"]:
+                    pokemonfindtype.append(pokemon)
+            print(pokemonfindtype)
 pokedex()
