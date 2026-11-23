@@ -30,10 +30,17 @@ def pokedex():
                 for pokemon in data:
                     print(pokemon["name"][lang])
         if action == 3: 
+            pokemonfindtype = []
             type1 = input("Type the frist type you want pokemon for.")
             type2 = input("Type the second type you want pokemon for.")
             for pokemon in data:
                  if type1 in pokemon["type"] and type2 in pokemon["type"]:
-                    pokemonfindtype.append(pokemon)
-            print(pokemonfindtype)
+                    pokemonfindtype.append(pokemon["name"][lang])
+            if len(pokemonfindtype) == 0:
+                print("Nothing found")
+            else: print(pokemonfindtype)
+        if action == 4:
+            findname = input("fnid")
+            if findname.lower() in pokemon(["name"]):
+                print
 pokedex()
