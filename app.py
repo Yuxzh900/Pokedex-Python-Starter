@@ -18,29 +18,43 @@ data = json.load(pokedex)
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
 
 
-def pokedex():
+# def pokedex():
+#     pokemonfindtype = []
+#     lang = "english"
+#     while True:
+#         print("1: Rechoose language" "2: print all pokemon names" "3: Search based on type" "4: Search based on name" "5: Move finder")
+#         action = int(input("Type the number of the action you want to do."))
+#         if action == 1:
+#             lang = input("Choose the language you want to use. The options are English, Japanese, Chinese, French.").lower()
+#         if action == 2:
+#                 for pokemon in data:
+#                     print(pokemon["name"][lang])
+#         if action == 3: 
+#             pokemonfindtype = []
+#             print("Type the same type if you want to find a monotype pokemon.")
+#             type1 = input("Type the frist type you want pokemon for.")
+#             type2 = input("Type the second type you want pokemon for.")
+#             for pokemon in data:
+#                  if type1 in pokemon["type"] and type2 in pokemon["type"]:
+#                     pokemonfindtype.append(pokemon["name"][lang])
+#             if len(pokemonfindtype) == 0:
+#                 print("Nothing found")
+#             else: print(pokemonfindtype)
+#         if action == 4:
+#             findname = input("fnid")
+#             if findname.lower() in data(["name"]):
+#                 print
+# pokedex()
+
+def findtype():
     pokemonfindtype = []
-    lang = "english"
-    while True:
-        print("1: Rechoose language" "2: print all pokemon names" "3: Search based on type" "4: Search based on name" "5: Move finder")
-        action = int(input("Type the number of the action you want to do."))
-        if action == 1:
-            lang = input("Choose the language you want to use. The options are English, Japanese, Chinese, French.").lower()
-        if action == 2:
-                for pokemon in data:
-                    print(pokemon["name"][lang])
-        if action == 3: 
-            pokemonfindtype = []
-            type1 = input("Type the frist type you want pokemon for.")
-            type2 = input("Type the second type you want pokemon for.")
-            for pokemon in data:
-                 if type1 in pokemon["type"] and type2 in pokemon["type"]:
-                    pokemonfindtype.append(pokemon["name"][lang])
-            if len(pokemonfindtype) == 0:
-                print("Nothing found")
-            else: print(pokemonfindtype)
-        if action == 4:
-            findname = input("fnid")
-            if findname.lower() in pokemon(["name"]):
-                print
-pokedex()
+    print("Type the same type if you want to find a monotype pokemon.")
+    type1 = input("Type the frist type you want pokemon for.")
+    type2 = input("Type the second type you want pokemon for.")
+    for pokemon in data:
+        if type1 in pokemon["type"] and type2 in pokemon["type"]:
+            pokemonfindtype.append(pokemon["name"]["english"])
+    if len(pokemonfindtype) == 0:
+            print("Nothing found")
+    else: print(pokemonfindtype)
+findtype()
